@@ -1,0 +1,10 @@
+{
+  "extends": "PackageNameBySolid/base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["site/*"],
+      "@pkg/*": ["components/*"]
+    }
+  }
+}
