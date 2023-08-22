@@ -7,8 +7,29 @@ import './components';
 import log from '../CHANGELOG.md?raw';
 
 const style = css`
+  :root {
+    background-color: var(--bg);
+  }
+
+  html,
+  body {
+    inline-size: 100vi;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    color: var(--text-color, rgb(0 0 0 / 65%));
+    transition-duration: 0.3s;
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.94, -0.1, 0.1, 1.2);
+  }
+
   #root {
+    display: flex;
     flex-wrap: wrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root > main {
+    animation: route-in var(--transition-duration, 0.3s);
   }
 
   n-provider {
@@ -84,7 +105,7 @@ const style = css`
     opacity: 0.2;
     content: '';
     transform: translateY(-100px);
-    animation: colorful-stripe 15s var(--transition-timing-function) infinite;
+    animation: color-hue 15s var(--transition-timing-function) infinite;
   }
 
   .n-site-bg {
@@ -98,20 +119,24 @@ const style = css`
       linear-gradient(-90deg, #8bc34a, transparent);
     transform: translate(-50%, -50%);
     background-blend-mode: screen;
-    animation: color-ful-stripe 15s infinite alternate linear;
+    animation: color-hue 15s infinite alternate linear;
     pointer-events: none;
     opacity: 0.05;
   }
 
-  :root[data-theme='dark'] {
-    background-color: #1c1c1c;
-
-    .n-site-bg {
+  @keyframes route-in {
+    from {
+      transform: translate3d(0, 16px, 0);
       opacity: 0;
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
     }
   }
 
-  @keyframes color-ful-stripe {
+  @keyframes color-hue {
     100% {
       filter: hue-rotate(360deg);
     }
@@ -152,7 +177,6 @@ function App() {
   return (
     <n-provider onScheme={onScheme}>
       <style>{style}</style>
-      <div class="n-site-bg" />
       <site-sider scheme={scheme()} />
       <main ref={box} class="site-doc-main">
         <Show when={!getPathName(location).startsWith('@moneko')}>
@@ -180,6 +204,9 @@ function App() {
           }
         `}
       />
+      <Show when={scheme() === 'light' || !isDark()}>
+        <div class="n-site-bg" />
+      </Show>
     </n-provider>
   );
 }
