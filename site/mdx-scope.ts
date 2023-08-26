@@ -1,5 +1,4 @@
-import { createComponent } from 'solid-js';
-import { Dynamic } from 'solid-js/web';
+import { Dynamic, createComponent } from 'solid-js/web';
 import type { MDXComponents } from 'mdx/types';
 
 type Props = {
