@@ -1,6 +1,6 @@
 {
   "name": "templet-library-solid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "solid js libraries",
   "main": "lib/index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "ui libraries"
   ],
   "devDependencies": {
+    "@moneko/css": "1.0.5",
     "@solidjs/testing-library": "0.8.4",
     "@swc/jest": "0.2.27",
     "@testing-library/jest-dom": "5.17.0",
