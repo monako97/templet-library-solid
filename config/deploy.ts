@@ -7,7 +7,7 @@ const conf: Partial<ConfigType<'swc'>> = {
     domain: '这里修改成你部署文档的域名',
     nojekyll: true,
   },
-  routeBaseName: '/libraryNameTemplate',
+  baseName: '/libraryNameTemplate',
   publicPath: '/libraryNameTemplate/',
   bundleAnalyzer: false,
   fixBrowserRouter: {
