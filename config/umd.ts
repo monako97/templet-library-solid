@@ -1,7 +1,7 @@
 import path from 'path';
 import { type ConfigType } from 'PackageNameByCore';
 
-const conf: Partial<ConfigType<'swc'>> = {
+const conf: Partial<ConfigType> = {
   devtool: false,
   htmlPluginOption: false,
   entry: path.join(process.cwd(), './components/index.ts'),

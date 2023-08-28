@@ -1,6 +1,6 @@
 import type { ConfigType } from 'PackageNameByCore';
 
-const conf: Partial<ConfigType<'swc'>> = {
+const conf: Partial<ConfigType> = {
   htmlPluginOption: {
     favicon: './site/assets/images/favicon.ico',
     tags: [
