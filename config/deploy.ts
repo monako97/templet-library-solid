@@ -7,7 +7,7 @@ const conf: Partial<ConfigType> = {
     domain: '这里修改成你部署文档的域名',
     nojekyll: true,
   },
-  baseName: '/libraryNameTemplate',
+  basename: '/libraryNameTemplate',
   publicPath: '/libraryNameTemplate/',
   bundleAnalyzer: false,
   fixBrowserRouter: {
