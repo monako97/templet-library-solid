@@ -1,5 +1,5 @@
 import { For, Show, createEffect, createMemo } from 'solid-js';
-import app from '@app';
+import app from '@app/info';
 import routes, { type RouteConfig } from '@app/routes';
 import { css } from 'PackageNameByCSS';
 import { A, getPathName, useLocation } from 'PackageNameBySolid';
