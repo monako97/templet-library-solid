@@ -285,13 +285,13 @@ const obj: Record<string, MyPkg[]> = {},
 let all: MyPkg[] = [];
 
 function extractMenu(list: RouteConfig[]) {
-  return list.forEach(({ key, meta, children }) => {
-    if (meta) {
-      const type = meta.type || '默认',
+  return list.forEach(({ key, metadata, children }) => {
+    if (metadata) {
+      const type = metadata.type || '默认',
         prev = obj[type as string] || [];
 
       obj[type as string] = prev.concat({
-        ...meta,
+        ...metadata,
         type: type as string,
         key,
       });
@@ -300,7 +300,7 @@ function extractMenu(list: RouteConfig[]) {
       }
       if (key) {
         kv[key] = {
-          ...meta,
+          ...metadata,
           type: type as string,
           key,
         };

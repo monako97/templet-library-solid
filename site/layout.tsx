@@ -1,7 +1,7 @@
 import { For, Show, createEffect, createMemo, createSignal } from 'solid-js';
 import docs from '@app/docs';
 import { css } from 'PackageNameByCSS';
-import { Outlet, getPathName, useLocation } from 'PackageNameBySolid';
+import { type RouteProps, getPathName, useLocation } from 'PackageNameBySolid';
 import { type ColorScheme, theme } from 'neko-ui';
 import './components';
 import log from '../CHANGELOG.md?raw';
@@ -159,7 +159,7 @@ const noShadow = css`
   }
 `;
 
-function App() {
+function App(props: RouteProps<string>) {
   let box: HTMLDivElement | undefined;
   const { isDark, scheme: orgScheme } = theme;
   const [scheme, setScheme] = createSignal(orgScheme());
@@ -185,7 +185,7 @@ function App() {
         <div class="site-page-view">
           <n-md css={noShadow} not-render={true}>
             <div>
-              <Outlet />
+              {props.children}
             </div>
           </n-md>
           <site-sandbox-group name={getPathName(location)} />
