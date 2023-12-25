@@ -1,5 +1,5 @@
 import { For, createMemo } from "solid-js";
-import app from "@app";
+import app from "@app/info";
 import coverages from "@app/coverage";
 import { css, cx } from "PackageNameByCSS";
 import { getPathName, useLocation } from "PackageNameBySolid";
