@@ -219,7 +219,7 @@ function Sandbox(_props: SandboxProps) {
     lang: '',
   });
   const [open, setOpen] = createSignal(false);
-  const scope = {
+  const components = {
     ...Solid,
     ...Pkgs,
     Portal,
@@ -277,7 +277,7 @@ function Sandbox(_props: SandboxProps) {
             <n-code-live
               source={sources()[current().lang]}
               jsx={current().jsx}
-              scope={scope}
+              components={components}
               render-jsx={render}
             />
             <Show when={langs().length > 1}>
