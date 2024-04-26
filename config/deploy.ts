@@ -5,7 +5,7 @@ const conf: Partial<ConfigType> = {
   bar: false,
   seo: {
     domain: '这里修改成你部署文档的域名',
-    nojekyll: true,
+    jekyll: false,
   },
   basename: '/libraryNameTemplate',
   publicPath: '/libraryNameTemplate/',
