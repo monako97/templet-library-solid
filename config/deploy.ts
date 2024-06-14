@@ -1,14 +1,14 @@
-import { type ConfigType } from 'PackageNameByCore';
+import { type ConfigType, PACKAGENAME, isDev } from 'PackageNameByCore';
 
 const conf: Partial<ConfigType> = {
-  devtool: false,
+  devtool: isDev ? 'eval-cheap-module-source-map' : false,
   bar: false,
   seo: {
     domain: '这里修改成你部署文档的域名',
     jekyll: false,
   },
-  basename: '/libraryNameTemplate',
-  publicPath: '/libraryNameTemplate/',
+  basename: `/${PACKAGENAME}`,
+  publicPath: `/${PACKAGENAME}/`,
   bundleAnalyzer: false,
   fixBrowserRouter: {
     pathSegmentsToKeep: 1,

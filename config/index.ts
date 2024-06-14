@@ -3,6 +3,12 @@ import type { ConfigType } from 'PackageNameByCore';
 const conf: Partial<ConfigType> = {
   htmlPluginOption: {
     favicon: './site/assets/images/favicon.ico',
+    meta: {
+      CSP: {
+        'http-equiv': 'Content-Security-Policy',
+        content: "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
+      },
+    },
     tags: [
       {
         tag: 'script',
@@ -11,7 +17,6 @@ const conf: Partial<ConfigType> = {
     ],
   },
   fallbackCompPath: '@/components/fallback',
-  externals: [/(.+)\/__tests__\/(.+)/i],
   importOnDemand: {
     lodash: {
       transform: '${member}',
