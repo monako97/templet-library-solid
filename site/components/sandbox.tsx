@@ -3,12 +3,14 @@ import examples, { type ExampleModule } from '@app/example';
 import Fallback from '@app/fallback';
 // eslint-disable-next-line import/no-unresolved
 import { isFunction } from '@moneko/common';
+// eslint-disable-next-line import/order
+import * as PKG from '@pkg';
 import CodeLive, { type CodeLiveProps } from 'n-code-live';
+import * as NekoUI from 'neko-ui';
 import { customElement } from 'solid-element';
 import h from 'solid-js/h';
 import * as SolidWeb from 'solid-js/web';
 import { codeNoShadowCss, groupCss, mdNoShadowCss, sandboxCss } from './sandbox.style';
-import * as PKG from '@pkg';
 
 const { createEffect, createMemo, createSignal, mergeProps, onMount } = Solid;
 const { For, Show, render, Portal, Dynamic } = SolidWeb;
@@ -31,6 +33,7 @@ interface SandboxProps extends Omit<ExampleModule, 'title'> {
 const components: CodeLiveProps['components'] = {
   ...Solid,
   ...PKG,
+  NekoUI,
   CodeLive,
   Portal,
   Dynamic,
