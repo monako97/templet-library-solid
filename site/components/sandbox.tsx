@@ -1,15 +1,14 @@
 import * as Solid from 'solid-js';
+import h from 'solid-js/h';
+import * as SolidWeb from 'solid-js/web';
 import examples, { type ExampleModule } from '@app/example';
 import Fallback from '@app/fallback';
-// eslint-disable-next-line import/no-unresolved
 import { isFunction } from '@moneko/common';
-// eslint-disable-next-line import/order
 import * as PKG from '@pkg';
 import CodeLive, { type CodeLiveProps } from 'n-code-live';
 import * as NekoUI from 'neko-ui';
 import { customElement } from 'solid-element';
-import h from 'solid-js/h';
-import * as SolidWeb from 'solid-js/web';
+
 import { codeNoShadowCss, groupCss, mdNoShadowCss, sandboxCss } from './sandbox.style';
 
 const { createEffect, createMemo, createSignal, mergeProps, onMount } = Solid;
