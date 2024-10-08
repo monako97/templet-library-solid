@@ -23,14 +23,14 @@ export interface CardProps {
 }
 
 /** 对于字面量建议使用枚举 */
-enum Size {
+export enum Size {
   /** 小 */
   small,
   /** 默认 */
   normal,
 }
 /** 类型 */
-enum Type {
+export enum Type {
   /** 线 */
   line = 'line',
   /** 卡片 */
