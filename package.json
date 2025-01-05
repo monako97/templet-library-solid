@@ -1,6 +1,6 @@
 {
   "name": "templet-library-solid",
-  "version": "2.3.11",
+  "version": "2.3.12",
   "description": "solid js libraries",
   "main": "lib/index.js",
   "scripts": {
