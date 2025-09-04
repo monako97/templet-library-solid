@@ -1,7 +1,7 @@
-import { Show, createMemo } from 'solid-js';
+import { createMemo, Show } from 'solid-js';
 import { css } from '@moneko/css';
-import { type TabOption, theme } from 'neko-ui';
 import type { MDXComponents } from '@moneko/solid/mdx';
+import { type Language, type TabOption, theme } from 'neko-ui';
 
 type Props = {
   children: Element;
@@ -143,7 +143,7 @@ const mdxScope: MDXComponents = {
       <n-code
         toolbar={true}
         line-number={false}
-        language={p.children.className.replace('language-', '').replace(/ .*$/, '')}
+        language={p.children.className.replace('language-', '').replace(/ .*$/, '') as Language}
         {...p}
       />
     );

@@ -11,6 +11,7 @@ import { customElement } from 'solid-element';
 
 import { codeNoShadowCss, groupCss, mdNoShadowCss, sandboxCss } from './sandbox.style';
 
+CodeLive.registry();
 const { createEffect, createMemo, createSignal, mergeProps, onMount } = Solid;
 const { For, Show, render, Portal, Dynamic } = SolidWeb;
 

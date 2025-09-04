@@ -6,6 +6,5 @@
       "@/*": ["site/*"],
       "@pkg/*": ["components/*"]
     }
-  },
-  "exclude": ["types/*"]
+  }
 }
