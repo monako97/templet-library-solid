@@ -18,11 +18,6 @@ const conf: Partial<ConfigType> = {
     ],
   },
   fallbackCompPath: '@/components/fallback',
-  importOnDemand: {
-    lodash: {
-      transform: '${member}',
-    },
-  },
 };
 
 export default conf;
