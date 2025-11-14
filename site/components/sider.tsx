@@ -1,6 +1,6 @@
 import { createEffect, createMemo, For, Show } from 'solid-js';
-import { description, name } from '@app/info';
-import routes, { type RouteConfig } from '@app/routes';
+import { description, name } from 'app:info';
+import routes, { type RouteConfig } from 'app:routes';
 import { css } from '@moneko/css';
 import { A, getPathName, useLocation } from '@moneko/solid';
 import { theme } from 'neko-ui';

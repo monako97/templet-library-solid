@@ -1,8 +1,8 @@
 import * as Solid from 'solid-js';
 import h from 'solid-js/h';
 import * as SolidWeb from 'solid-js/web';
-import examples, { type ExampleModule } from '@app/example';
-import Fallback from '@app/fallback';
+import examples, { type ExampleModule } from 'docs:examples';
+import Fallback from 'app:fallback';
 import { isFunction } from '@moneko/common';
 import * as PKG from '@pkg';
 import CodeLive, { type CodeLiveProps } from 'n-code-live';
@@ -168,7 +168,7 @@ interface SandboxGroupProps {
 function SandboxGroup(props: SandboxGroupProps) {
   async function load(name: string) {
     let box: () => Solid.JSX.Element = () => null;
-    const exampleModule = examples[`@app/example/${name}`];
+    const exampleModule = examples[`example:${name}`];
 
     if (name.length > 0 && isFunction(exampleModule)) {
       const resp = (await exampleModule()).default || [];

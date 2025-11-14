@@ -1,5 +1,5 @@
 import { createEffect, createMemo, For, Show } from 'solid-js';
-import docs from '@app/docs';
+import docs from 'docs:docs';
 import { getPathName, type RouteProps, useLocation } from '@moneko/solid';
 import {
   Avatar,
