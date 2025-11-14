@@ -1,7 +1,7 @@
 import * as Solid from 'solid-js';
 import h from 'solid-js/h';
 import * as SolidWeb from 'solid-js/web';
-import examples, { type ExampleModule } from 'docs:examples';
+import examples, { type ExampleModule } from 'docs:example';
 import Fallback from 'app:fallback';
 import { isFunction } from '@moneko/common';
 import * as PKG from '@pkg';
